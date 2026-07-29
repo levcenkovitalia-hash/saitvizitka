@@ -37,20 +37,24 @@
 
   <!-- 1. HERO -->
   <section id="hero" class="hero">
-    <div class="container hero-inner">
-      <div class="hero-text" data-animate="fade-up">
-        <p class="eyebrow">Дизайнер презентаций</p>
-        <h1 class="hero-name">Виталия<br>Юрченко</h1>
-        <ul class="tool-tags" aria-label="Инструменты">
-          <li>PowerPoint</li>
-          <li>Figma</li>
-          <li>вайб-кодинг / HTML</li>
-        </ul>
-        <a href="#contact" class="btn btn-primary">Обсудить презентацию</a>
-      </div>
-      <div class="hero-photo" data-animate="fade-up" data-animate-delay="150">
-        <div class="hero-photo-frame">
-          <img src="images/portrait.jpg" alt="Виталия Юрченко, дизайнер презентаций" width="900" height="1350">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <div class="hero-card">
+        <div class="hero-text" data-animate="fade-up">
+          <p class="eyebrow">13+ лет опыта · Дизайнер презентаций</p>
+          <h1 class="hero-name">Виталия Юрченко</h1>
+          <p class="hero-sub">Превращаю бизнес-задачи и цифры в презентации, которые убеждают — от питчей и отчётов до продуктовых сторителлингов.</p>
+          <ul class="tool-tags" aria-label="Инструменты">
+            <li>PowerPoint</li>
+            <li>Figma</li>
+            <li>вайб-кодинг / HTML</li>
+          </ul>
+          <a href="#contact" class="btn btn-primary">Обсудить презентацию</a>
+        </div>
+        <div class="hero-photo" data-animate="fade-up" data-animate-delay="150">
+          <div class="hero-photo-frame">
+            <img src="images/portrait.jpg" alt="Виталия Юрченко, дизайнер презентаций" width="1000" height="1503">
+          </div>
         </div>
       </div>
     </div>
@@ -64,10 +68,6 @@
         <div class="stat">
           <span class="stat-number" data-count-to="13">0</span><span class="stat-suffix">+</span>
           <span class="stat-label">лет опыта</span>
-        </div>
-        <div class="stat">
-          <span class="stat-number" data-count-to="5">0</span><span class="stat-suffix">+</span>
-          <span class="stat-label">профильных образований</span>
         </div>
       </div>
 
@@ -116,15 +116,18 @@
 
       <div class="process-block">
         <h2 data-animate="fade-up">Как проходит работа</h2>
-        <ol class="process-timeline">
-          <li data-animate="fade-up" data-animate-delay="0"><span class="step-num">1</span><span class="step-text">Бриф</span></li>
-          <li data-animate="fade-up" data-animate-delay="60"><span class="step-num">2</span><span class="step-text">Предоплата 50%</span></li>
-          <li data-animate="fade-up" data-animate-delay="120"><span class="step-num">3</span><span class="step-text">Согласование концепции</span></li>
-          <li data-animate="fade-up" data-animate-delay="180"><span class="step-num">4</span><span class="step-text">1–2 слайда в новой концепции</span></li>
-          <li data-animate="fade-up" data-animate-delay="240"><span class="step-num">5</span><span class="step-text">Вёрстка презентации</span></li>
-          <li data-animate="fade-up" data-animate-delay="300"><span class="step-num">6</span><span class="step-text">Правки (если нужно)</span></li>
-          <li data-animate="fade-up" data-animate-delay="360"><span class="step-num">7</span><span class="step-text">Сдача в PDF/PPTX</span></li>
-        </ol>
+        <div class="process-timeline-wrap">
+          <div class="timeline-track" aria-hidden="true"><div class="timeline-progress"></div></div>
+          <ol class="process-timeline">
+            <li data-animate="fade-up" data-animate-delay="0"><span class="step-num">1</span><span class="step-text">Бриф</span></li>
+            <li data-animate="fade-up" data-animate-delay="60"><span class="step-num">2</span><span class="step-text">Предоплата 50%</span></li>
+            <li data-animate="fade-up" data-animate-delay="120"><span class="step-num">3</span><span class="step-text">Согласование концепции</span></li>
+            <li data-animate="fade-up" data-animate-delay="180"><span class="step-num">4</span><span class="step-text">1–2 слайда в новой концепции</span></li>
+            <li data-animate="fade-up" data-animate-delay="240"><span class="step-num">5</span><span class="step-text">Вёрстка презентации</span></li>
+            <li data-animate="fade-up" data-animate-delay="300"><span class="step-num">6</span><span class="step-text">Правки (если нужно)</span></li>
+            <li data-animate="fade-up" data-animate-delay="360"><span class="step-num">7</span><span class="step-text">Сдача в PDF/PPTX</span></li>
+          </ol>
+        </div>
         <p class="process-note" data-animate="fade-up">Средний срок готовности — от 2 дней в зависимости от объёма и сложности проекта.</p>
       </div>
 
@@ -138,40 +141,80 @@
 
       <div class="gallery">
 
-        <article class="case-card" data-animate="fade-up">
-          <button class="case-preview" data-case="inner-health" aria-label="Открыть кейс INNER HEALTH">
-            <img src="images/gallery/inner-health-1.jpg" alt="Слайд презентации INNER HEALTH" loading="lazy" width="720" height="405">
-          </button>
+        <article class="case-card" data-animate="fade-up" data-case="inner-health">
+          <div class="case-preview">
+            <div class="case-slides">
+              <img src="images/gallery/inner-health-1.jpg" alt="Слайд 1 презентации INNER HEALTH" loading="lazy" class="is-active">
+              <img src="images/gallery/inner-health-2.jpg" alt="Слайд 2 презентации INNER HEALTH" loading="lazy">
+              <img src="images/gallery/inner-health-3.jpg" alt="Слайд 3 презентации INNER HEALTH" loading="lazy">
+            </div>
+            <button class="case-expand" data-case-open aria-label="Открыть кейс INNER HEALTH на весь экран">⤢</button>
+            <div class="case-dots" role="tablist" aria-label="Слайды кейса INNER HEALTH">
+              <button class="case-dot is-active" data-slide-index="0" aria-label="Слайд 1" aria-selected="true"></button>
+              <button class="case-dot" data-slide-index="1" aria-label="Слайд 2" aria-selected="false"></button>
+              <button class="case-dot" data-slide-index="2" aria-label="Слайд 3" aria-selected="false"></button>
+            </div>
+          </div>
           <div class="case-caption">
             <h3>Каталог продукции INNER HEALTH</h3>
             <p>Редизайн устаревшей презентации: переработан текст, подобраны новые цвета и стиль, разработан современный визуальный дизайн. Изображения продукции сгенерированы с помощью нейросетей.</p>
           </div>
         </article>
 
-        <article class="case-card" data-animate="fade-up" data-animate-delay="80">
-          <button class="case-preview" data-case="webinar" aria-label="Открыть кейс «Антикризисный sales-маркетинг»">
-            <img src="images/gallery/webinar-1.jpg" alt="Слайд презентации «Антикризисный sales-маркетинг»" loading="lazy" width="720" height="405">
-          </button>
+        <article class="case-card" data-animate="fade-up" data-animate-delay="80" data-case="webinar">
+          <div class="case-preview">
+            <div class="case-slides">
+              <img src="images/gallery/webinar-1.jpg" alt="Слайд 1 презентации «Антикризисный sales-маркетинг»" loading="lazy" class="is-active">
+              <img src="images/gallery/webinar-2.jpg" alt="Слайд 2 презентации «Антикризисный sales-маркетинг»" loading="lazy">
+              <img src="images/gallery/webinar-3.jpg" alt="Слайд 3 презентации «Антикризисный sales-маркетинг»" loading="lazy">
+            </div>
+            <button class="case-expand" data-case-open aria-label="Открыть кейс «Антикризисный sales-маркетинг» на весь экран">⤢</button>
+            <div class="case-dots" role="tablist" aria-label="Слайды кейса «Антикризисный sales-маркетинг»">
+              <button class="case-dot is-active" data-slide-index="0" aria-label="Слайд 1" aria-selected="true"></button>
+              <button class="case-dot" data-slide-index="1" aria-label="Слайд 2" aria-selected="false"></button>
+              <button class="case-dot" data-slide-index="2" aria-label="Слайд 3" aria-selected="false"></button>
+            </div>
+          </div>
           <div class="case-caption">
             <h3>Антикризисный sales-маркетинг</h3>
             <p>Презентация для вебинара: исходный текст переработан специально под формат выступления. Дизайн разработан в соответствии с брендбуком компании-заказчика.</p>
           </div>
         </article>
 
-        <article class="case-card" data-animate="fade-up">
-          <button class="case-preview" data-case="marketing-strategy" aria-label="Открыть кейс «Маркетинговая стратегия»">
-            <img src="images/gallery/marketing-strategy-1.jpg" alt="Слайд презентации «Маркетинговая стратегия»" loading="lazy" width="1280" height="720">
-          </button>
+        <article class="case-card" data-animate="fade-up" data-case="marketing-strategy">
+          <div class="case-preview">
+            <div class="case-slides">
+              <img src="images/gallery/marketing-strategy-1.jpg" alt="Слайд 1 презентации «Маркетинговая стратегия»" loading="lazy" class="is-active">
+              <img src="images/gallery/marketing-strategy-2.jpg" alt="Слайд 2 презентации «Маркетинговая стратегия»" loading="lazy">
+              <img src="images/gallery/marketing-strategy-3.jpg" alt="Слайд 3 презентации «Маркетинговая стратегия»" loading="lazy">
+            </div>
+            <button class="case-expand" data-case-open aria-label="Открыть кейс «Маркетинговая стратегия» на весь экран">⤢</button>
+            <div class="case-dots" role="tablist" aria-label="Слайды кейса «Маркетинговая стратегия»">
+              <button class="case-dot is-active" data-slide-index="0" aria-label="Слайд 1" aria-selected="true"></button>
+              <button class="case-dot" data-slide-index="1" aria-label="Слайд 2" aria-selected="false"></button>
+              <button class="case-dot" data-slide-index="2" aria-label="Слайд 3" aria-selected="false"></button>
+            </div>
+          </div>
           <div class="case-caption">
             <h3>Маркетинговая стратегия</h3>
             <p>Презентация-задание для трудоустройства на английском языке: текст переведён с русского, подобраны цвета и визуальное оформление. Клиент успешно прошёл собеседование и получил работу — презентацию отдельно отметили как одну из сильных сторон.</p>
           </div>
         </article>
 
-        <article class="case-card" data-animate="fade-up" data-animate-delay="80">
-          <button class="case-preview" data-case="aina" aria-label="Открыть кейс AINA">
-            <img src="images/gallery/aina-1.jpg" alt="Слайд инструкции по продукту AINA" loading="lazy" width="1280" height="720">
-          </button>
+        <article class="case-card" data-animate="fade-up" data-animate-delay="80" data-case="aina">
+          <div class="case-preview">
+            <div class="case-slides">
+              <img src="images/gallery/aina-1.jpg" alt="Слайд 1 инструкции по продукту AINA" loading="lazy" class="is-active">
+              <img src="images/gallery/aina-2.jpg" alt="Слайд 2 инструкции по продукту AINA" loading="lazy">
+              <img src="images/gallery/aina-3.jpg" alt="Слайд 3 инструкции по продукту AINA" loading="lazy">
+            </div>
+            <button class="case-expand" data-case-open aria-label="Открыть кейс AINA на весь экран">⤢</button>
+            <div class="case-dots" role="tablist" aria-label="Слайды кейса AINA">
+              <button class="case-dot is-active" data-slide-index="0" aria-label="Слайд 1" aria-selected="true"></button>
+              <button class="case-dot" data-slide-index="1" aria-label="Слайд 2" aria-selected="false"></button>
+              <button class="case-dot" data-slide-index="2" aria-label="Слайд 3" aria-selected="false"></button>
+            </div>
+          </div>
           <div class="case-caption">
             <h3>AINA — инструкция по продукту</h3>
             <p>Гайд по использованию онлайн-продукта: дизайн инструкции разработан с нуля, подобраны шрифты, цвета и визуальный стиль под продукт.</p>
@@ -186,13 +229,19 @@
         <h2 data-animate="fade-up">Отзывы клиентов</h2>
         <div class="reviews-grid">
           <figure class="review-card" data-animate="fade-up">
-            <img src="images/reviews/review-1.png" alt="Скриншот переписки с отзывом клиента" loading="lazy">
+            <div class="review-stars" aria-label="Оценка 5 из 5">★★★★★</div>
+            <blockquote class="review-text">«Виталия, вы супер профессионал, спасибо вам огромное. Повторюсь, что под впечатлением от встречи на YouDo — ранее не встречала такой уровень в принципе на платформе, да и, признаться, в жизни очень редко. Просто поклон!»</blockquote>
+            <figcaption class="review-author">Клиентка · YouDo</figcaption>
           </figure>
           <figure class="review-card" data-animate="fade-up" data-animate-delay="80">
-            <img src="images/reviews/review-2.png" alt="Скриншот переписки с отзывом клиента" loading="lazy">
+            <div class="review-stars" aria-label="Оценка 5 из 5">★★★★★</div>
+            <blockquote class="review-text">«Виталия супер исполнитель, и такого профессионала очень редко можно встретить, я впечатлена, спасибо! Всегда на связи, всё оперативно, точно и иногда сверх ожидаемого — рекомендую 200%».</blockquote>
+            <figcaption class="review-author">Анна</figcaption>
           </figure>
           <figure class="review-card" data-animate="fade-up" data-animate-delay="160">
-            <img src="images/reviews/review-3.png" alt="Скриншот переписки с отзывом клиента" loading="lazy">
+            <div class="review-stars" aria-label="Оценка 5 из 5">★★★★★</div>
+            <blockquote class="review-text">«С удовольствием делюсь отзывом о сотрудничестве с Виталией! Как только мы начали переписываться по моей задаче, я сразу понял, что со мной ведёт беседу профессионал с большим опытом. Вопросы Виталии были конкретизирующими и раскрывающими. Дизайн и оформление презентации были для меня завораживающими — Виталия пропускает задание через своё сердце и по-настоящему занимается творчеством. Как итог — у меня теперь ШИКАРНАЯ презентация, которую хочется отправить всем потенциальным клиентам. Ставлю 5+ и всем рекомендую!»</blockquote>
+            <figcaption class="review-author">Алексей · Профи.ру</figcaption>
           </figure>
         </div>
       </div>
