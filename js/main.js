@@ -52,6 +52,24 @@
     counters.forEach((el) => { el.textContent = el.getAttribute('data-count-to'); });
   }
 
+  /* ===== Timeline draw-line ===== */
+  const timelineTrack = document.querySelector('.timeline-track');
+  if (timelineTrack) {
+    if ('IntersectionObserver' in window) {
+      const trackIo = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            timelineTrack.classList.add('is-visible');
+            trackIo.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.4 });
+      trackIo.observe(timelineTrack);
+    } else {
+      timelineTrack.classList.add('is-visible');
+    }
+  }
+
   /* ===== Lightbox ===== */
   const cases = {
     'inner-health': {
@@ -86,11 +104,11 @@
     lightboxImg.alt = `${c.title} — слайд ${currentIndex + 1}`;
   };
 
-  const openLightbox = (caseKey) => {
+  const openLightbox = (caseKey, startIndex) => {
     if (!cases[caseKey]) return;
     lastFocused = document.activeElement;
     currentCase = caseKey;
-    currentIndex = 0;
+    currentIndex = startIndex || 0;
     showSlide();
     lightbox.hidden = false;
     requestAnimationFrame(() => lightbox.classList.add('is-open'));
@@ -111,9 +129,36 @@
     showSlide();
   };
 
-  document.querySelectorAll('[data-case]').forEach((btn) => {
-    btn.addEventListener('click', () => openLightbox(btn.getAttribute('data-case')));
+  /* Per-card mini-carousel: dots switch the active slide, image/expand opens the full lightbox */
+  document.querySelectorAll('.case-card').forEach((card) => {
+    const caseKey = card.getAttribute('data-case');
+    const slides = card.querySelectorAll('.case-slides img');
+    const dots = card.querySelectorAll('.case-dot');
+    let activeIndex = 0;
+
+    const setActive = (index) => {
+      activeIndex = index;
+      slides.forEach((img, i) => img.classList.toggle('is-active', i === index));
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('is-active', i === index);
+        dot.setAttribute('aria-selected', i === index ? 'true' : 'false');
+      });
+    };
+
+    dots.forEach((dot, i) => {
+      dot.addEventListener('click', (e) => {
+        e.stopPropagation();
+        setActive(i);
+      });
+    });
+
+    const preview = card.querySelector('.case-preview');
+    preview.addEventListener('click', (e) => {
+      if (e.target.closest('.case-dot')) return;
+      openLightbox(caseKey, activeIndex);
+    });
   });
+
   document.querySelectorAll('[data-close-lightbox]').forEach((el) => {
     el.addEventListener('click', closeLightbox);
   });
