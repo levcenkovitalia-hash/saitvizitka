@@ -153,16 +153,16 @@ main#main > .container { padding-top: 24px; padding-bottom: 24px; }
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0));
   border: 1px solid var(--border);
   border-radius: 28px;
-  padding: 0 24px;
+  padding: 24px;
   overflow: hidden;
 }
 @media (min-width: 640px) {
-  .page-card { padding: 0 32px; }
+  .page-card { padding: 32px; }
 }
 
 /* ===== Hero ===== */
 .hero {
-  padding: 44px 0 64px;
+  padding: 0 0 64px;
 }
 .hero-inner {
   display: grid;
@@ -278,7 +278,7 @@ main#main > .container { padding-top: 24px; padding-bottom: 24px; }
 .works h2,
 .reviews h2 {
   font-size: clamp(28px, 4vw, 38px);
-  margin-bottom: 16px;
+  margin-bottom: 24px;
 }
 
 .services-grid {
@@ -568,7 +568,7 @@ main#main > .container { padding-top: 24px; padding-bottom: 24px; }
 }
 
 /* ===== Contact ===== */
-.contact { padding: 96px 0 64px; border-top: 1px solid var(--border); }
+.contact { padding: 96px 0 0; border-top: 1px solid var(--border); }
 .contact-inner {
   display: grid;
   grid-template-columns: 1fr;
@@ -577,7 +577,7 @@ main#main > .container { padding-top: 24px; padding-bottom: 24px; }
 @media (min-width: 880px) {
   .contact-inner { grid-template-columns: 0.85fr 1.15fr; }
 }
-.contact-info h2 { font-size: clamp(28px, 4vw, 38px); margin-bottom: 16px; }
+.contact-info h2 { font-size: clamp(28px, 4vw, 38px); margin-bottom: 24px; }
 .contact-lead { color: var(--text-muted); margin-bottom: 32px; max-width: 420px; }
 .contact-list { display: grid; gap: 20px; }
 .contact-list li { display: flex; align-items: flex-start; gap: 14px; }
