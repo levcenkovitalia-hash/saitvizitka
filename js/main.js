@@ -24,34 +24,6 @@
     animated.forEach((el) => el.classList.add('is-visible'));
   }
 
-  /* ===== Count-up numbers ===== */
-  const counters = document.querySelectorAll('[data-count-to]');
-  const runCount = (el) => {
-    const target = parseInt(el.getAttribute('data-count-to'), 10);
-    const duration = 1200;
-    const start = performance.now();
-    const step = (now) => {
-      const progress = Math.min((now - start) / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 3);
-      el.textContent = Math.round(eased * target);
-      if (progress < 1) requestAnimationFrame(step);
-    };
-    requestAnimationFrame(step);
-  };
-  if ('IntersectionObserver' in window && counters.length) {
-    const countIo = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          runCount(entry.target);
-          countIo.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.5 });
-    counters.forEach((el) => countIo.observe(el));
-  } else {
-    counters.forEach((el) => { el.textContent = el.getAttribute('data-count-to'); });
-  }
-
   /* ===== Timeline draw-line ===== */
   const timelineTrack = document.querySelector('.timeline-track');
   if (timelineTrack) {
@@ -73,8 +45,8 @@
   /* ===== Lightbox ===== */
   const cases = {
     'inner-health': {
-      title: 'Каталог продукции INNER HEALTH',
-      images: ['images/gallery/inner-health-1.jpg', 'images/gallery/inner-health-2.jpg', 'images/gallery/inner-health-3.jpg'],
+      title: 'Каталог продукции',
+      images: ['images/gallery/inner-health-3.jpg', 'images/gallery/inner-health-2.jpg', 'images/gallery/inner-health-1.jpg'],
     },
     'webinar': {
       title: 'Антикризисный sales-маркетинг',
@@ -82,10 +54,10 @@
     },
     'marketing-strategy': {
       title: 'Маркетинговая стратегия',
-      images: ['images/gallery/marketing-strategy-1.jpg', 'images/gallery/marketing-strategy-2.jpg', 'images/gallery/marketing-strategy-3.jpg'],
+      images: ['images/gallery/marketing-strategy-3.jpg', 'images/gallery/marketing-strategy-2.jpg', 'images/gallery/marketing-strategy-1.jpg'],
     },
     'aina': {
-      title: 'AINA — инструкция по продукту',
+      title: 'Инструкция по продукту',
       images: ['images/gallery/aina-1.jpg', 'images/gallery/aina-2.jpg', 'images/gallery/aina-3.jpg'],
     },
   };
@@ -151,6 +123,21 @@
         setActive(i);
       });
     });
+
+    const arrowPrev = card.querySelector('[data-slide-prev]');
+    const arrowNext = card.querySelector('[data-slide-next]');
+    if (arrowPrev) {
+      arrowPrev.addEventListener('click', (e) => {
+        e.stopPropagation();
+        setActive((activeIndex - 1 + slides.length) % slides.length);
+      });
+    }
+    if (arrowNext) {
+      arrowNext.addEventListener('click', (e) => {
+        e.stopPropagation();
+        setActive((activeIndex + 1) % slides.length);
+      });
+    }
 
     const preview = card.querySelector('.case-preview');
     preview.addEventListener('click', (e) => {
