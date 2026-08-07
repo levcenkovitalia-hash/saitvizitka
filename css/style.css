@@ -298,7 +298,7 @@ main#main > .container { padding-top: 24px; padding-bottom: 24px; }
   height: 460px;
   background:
     radial-gradient(380px circle at 0% 15%, rgba(217, 31, 191, 0.16), transparent 70%),
-    radial-gradient(420px circle at 100% 25%, rgba(147, 51, 234, 0.2), transparent 70%);
+    radial-gradient(460px circle at 100% 25%, rgba(147, 51, 234, 0.36), transparent 70%);
   filter: blur(6px);
   pointer-events: none;
   z-index: 0;
@@ -443,9 +443,9 @@ main#main > .container { padding-top: 24px; padding-bottom: 24px; }
   position: absolute;
   top: -20px;
   right: 0;
-  width: 420px;
-  height: 420px;
-  background: radial-gradient(circle, rgba(147, 51, 234, 0.16), transparent 70%);
+  width: 460px;
+  height: 460px;
+  background: radial-gradient(circle, rgba(147, 51, 234, 0.34), transparent 70%);
   filter: blur(6px);
   pointer-events: none;
   z-index: 0;
@@ -639,9 +639,9 @@ main#main > .container { padding-top: 24px; padding-bottom: 24px; }
   position: absolute;
   top: -20px;
   right: 0;
-  width: 420px;
-  height: 420px;
-  background: radial-gradient(circle, rgba(217, 31, 191, 0.16), transparent 70%);
+  width: 460px;
+  height: 460px;
+  background: radial-gradient(circle, rgba(217, 31, 191, 0.34), transparent 70%);
   filter: blur(6px);
   pointer-events: none;
   z-index: 0;
