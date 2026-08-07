@@ -141,7 +141,9 @@ h1, h2, h3 { font-family: var(--font-heading); font-weight: 700; line-height: 1.
   z-index: -1;
   background:
     radial-gradient(700px circle at 4% 8%, rgba(217, 31, 191, 0.28), transparent 62%),
-    radial-gradient(640px circle at 16% 92%, rgba(147, 51, 234, 0.24), transparent 62%);
+    radial-gradient(640px circle at 16% 92%, rgba(147, 51, 234, 0.24), transparent 62%),
+    radial-gradient(680px circle at 98% 55%, rgba(147, 51, 234, 0.26), transparent 62%),
+    radial-gradient(600px circle at 92% 100%, rgba(217, 31, 191, 0.2), transparent 62%);
   pointer-events: none;
 }
 
@@ -285,29 +287,6 @@ main#main > .container { padding-top: 24px; padding-bottom: 24px; }
   pointer-events: none;
 }
 
-/* Декоративное свечение у экрана "Обо мне" — для визуального объёма */
-.about {
-  position: relative;
-}
-.about::before {
-  content: "";
-  position: absolute;
-  top: -20px;
-  left: 0;
-  right: 0;
-  height: 460px;
-  background:
-    radial-gradient(380px circle at 0% 15%, rgba(217, 31, 191, 0.16), transparent 70%),
-    radial-gradient(460px circle at 100% 25%, rgba(147, 51, 234, 0.36), transparent 70%);
-  filter: blur(6px);
-  pointer-events: none;
-  z-index: 0;
-}
-.about > * {
-  position: relative;
-  z-index: 1;
-}
-
 .thesis-list {
   display: grid;
   grid-template-columns: 1fr;
@@ -437,23 +416,7 @@ main#main > .container { padding-top: 24px; padding-bottom: 24px; }
 .process-note { color: var(--text-muted); font-size: 14.5px; }
 
 /* ===== Works ===== */
-.works { position: relative; padding: 40px 0 96px; border-top: 1px solid var(--border); }
-.works::before {
-  content: "";
-  position: absolute;
-  top: -20px;
-  right: 0;
-  width: 460px;
-  height: 460px;
-  background: radial-gradient(circle, rgba(147, 51, 234, 0.34), transparent 70%);
-  filter: blur(6px);
-  pointer-events: none;
-  z-index: 0;
-}
-.works > * {
-  position: relative;
-  z-index: 1;
-}
+.works { padding: 40px 0 96px; border-top: 1px solid var(--border); }
 
 .gallery {
   display: grid;
@@ -633,23 +596,7 @@ main#main > .container { padding-top: 24px; padding-bottom: 24px; }
 }
 
 /* ===== Contact ===== */
-.contact { position: relative; padding: 40px 0 0; border-top: 1px solid var(--border); }
-.contact::before {
-  content: "";
-  position: absolute;
-  top: -20px;
-  right: 0;
-  width: 460px;
-  height: 460px;
-  background: radial-gradient(circle, rgba(217, 31, 191, 0.34), transparent 70%);
-  filter: blur(6px);
-  pointer-events: none;
-  z-index: 0;
-}
-.contact > * {
-  position: relative;
-  z-index: 1;
-}
+.contact { padding: 40px 0 0; border-top: 1px solid var(--border); }
 .contact-inner {
   display: grid;
   grid-template-columns: 1fr;
