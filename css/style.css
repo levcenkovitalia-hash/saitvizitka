@@ -1,13 +1,13 @@
-/* ===== Design tokens ===== */
+/* ===== Design tokens — magenta variant ===== */
 :root {
-  --bg: #0d0d0d;
-  --bg-elevated: #161616;
+  --bg: #000000;
+  --bg-elevated: #150e1e;
   --border: rgba(255, 255, 255, 0.12);
   --text: #ffffff;
-  --text-muted: #b8b6b0;
-  --accent-pink: #ED93B1;
-  --accent-purple: #AFA9EC;
-  --gradient: linear-gradient(135deg, #ED93B1, #AFA9EC);
+  --text-muted: #b9adc4;
+  --accent-pink: #D91FBF;
+  --accent-purple: #A855F7;
+  --gradient: linear-gradient(135deg, #D91FBF, #9333EA);
   --font-heading: "Unbounded", sans-serif;
   --font-body: "Onest", sans-serif;
   --container-w: 1120px;
@@ -109,12 +109,12 @@ h1, h2, h3 { font-family: var(--font-heading); font-weight: 700; line-height: 1.
 }
 .btn-primary {
   background: var(--gradient);
-  color: #17111a;
+  color: #ffffff;
 }
 .btn-primary:hover,
 .btn-primary:focus-visible {
   transform: translateY(-2px);
-  box-shadow: 0 12px 32px -8px rgba(237, 147, 177, 0.5);
+  box-shadow: 0 12px 36px -6px rgba(217, 31, 191, 0.6);
 }
 .btn-primary:active { transform: translateY(0); }
 .btn-primary:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
@@ -140,17 +140,15 @@ h1, h2, h3 { font-family: var(--font-heading); font-weight: 700; line-height: 1.
   inset: 0;
   z-index: -1;
   background:
-    radial-gradient(620px circle at 10% 8%, rgba(237, 147, 177, 0.16), transparent 60%),
-    radial-gradient(680px circle at 92% 28%, rgba(175, 169, 236, 0.16), transparent 60%),
-    radial-gradient(600px circle at 20% 92%, rgba(237, 147, 177, 0.1), transparent 60%),
-    radial-gradient(600px circle at 85% 85%, rgba(175, 169, 236, 0.1), transparent 60%);
+    radial-gradient(700px circle at 4% 8%, rgba(217, 31, 191, 0.28), transparent 62%),
+    radial-gradient(640px circle at 16% 92%, rgba(147, 51, 234, 0.24), transparent 62%);
   pointer-events: none;
 }
 
 main#main > .container { padding-top: 24px; padding-bottom: 24px; }
 
 .page-card {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0));
+  background: var(--bg);
   border: 1px solid var(--border);
   border-radius: 28px;
   padding: 24px;
@@ -162,8 +160,11 @@ main#main > .container { padding-top: 24px; padding-bottom: 24px; }
 
 /* ===== Hero ===== */
 .hero {
+  position: relative;
   padding: 0 0 64px;
 }
+/* Внутреннее magenta-свечение карточки, как в референсе */
+.hero > .hero-inner { position: relative; z-index: 1; }
 .hero-inner {
   display: grid;
   grid-template-columns: 1fr;
@@ -187,10 +188,7 @@ main#main > .container { padding-top: 24px; padding-bottom: 24px; }
 }
 .hero-name {
   font-size: clamp(38px, 7vw, 64px);
-  background: var(--gradient);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  color: var(--text);
   letter-spacing: -0.01em;
   margin-bottom: 18px;
 }
@@ -208,23 +206,29 @@ main#main > .container { padding-top: 24px; padding-bottom: 24px; }
   margin-bottom: 36px;
 }
 .tool-tags li {
-  border: 1px solid var(--border);
+  border: 1px solid rgba(217, 31, 191, 0.3);
   border-radius: 100px;
   padding: 8px 18px;
   font-size: 14px;
   color: var(--text);
 }
-.hero-photo { display: flex; justify-content: center; align-items: stretch; }
+.hero-photo {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  position: relative;
+  z-index: 1;
+  background: #000000;
+  border-radius: 24px;
+}
 .hero-photo-frame {
   width: min(320px, 70vw);
   aspect-ratio: 2 / 3;
   border-radius: 24px;
   overflow: hidden;
   position: relative;
-  box-shadow:
-    0 0 0 1px rgba(255, 255, 255, 0.1),
-    -30px 0 60px -10px rgba(237, 147, 177, 0.3),
-    -60px 0 100px 0 rgba(175, 169, 236, 0.22);
+  box-shadow: none;
+  background: #000;
 }
 .hero-photo-frame img {
   width: 100%;
@@ -234,7 +238,7 @@ main#main > .container { padding-top: 24px; padding-bottom: 24px; }
 }
 
 @media (min-width: 880px) {
-  .hero-photo { justify-content: flex-end; }
+  .hero-photo { justify-content: flex-end; padding: 32px; margin: -32px; }
 }
 
 /* ===== About ===== */
@@ -250,7 +254,7 @@ main#main > .container { padding-top: 24px; padding-bottom: 24px; }
   line-height: 1.7;
   max-width: 760px;
   margin-bottom: 48px;
-  padding: 28px 28px 28px 32px;
+  padding: 28px 64px 28px 32px;
   border-radius: var(--radius);
   background: var(--bg-elevated);
   border: 1px solid var(--border);
@@ -264,6 +268,42 @@ main#main > .container { padding-top: 24px; padding-bottom: 24px; }
   width: 3px;
   border-radius: 3px;
   background: var(--gradient);
+}
+.positioning::after {
+  content: "\201D";
+  position: absolute;
+  top: 8px;
+  right: 20px;
+  font-family: var(--font-heading);
+  font-size: 64px;
+  line-height: 1;
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+/* Декоративное свечение у экрана "Обо мне" — для визуального объёма */
+.about {
+  position: relative;
+}
+.about::before {
+  content: "";
+  position: absolute;
+  top: -20px;
+  left: -80px;
+  width: 380px;
+  height: 380px;
+  background: radial-gradient(circle, rgba(217, 31, 191, 0.16), transparent 70%);
+  filter: blur(6px);
+  pointer-events: none;
+  z-index: 0;
+}
+.about > * {
+  position: relative;
+  z-index: 1;
 }
 
 .thesis-list {
@@ -286,7 +326,7 @@ main#main > .container { padding-top: 24px; padding-bottom: 24px; }
   background: var(--bg-elevated);
   transition: border-color 0.25s var(--ease);
 }
-.thesis-list li:hover { border-color: rgba(237, 147, 177, 0.3); }
+.thesis-list li:hover { border-color: rgba(217, 31, 191, 0.4); }
 .thesis-list li::before {
   content: "";
   position: absolute;
@@ -328,7 +368,7 @@ main#main > .container { padding-top: 24px; padding-bottom: 24px; }
 .service-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.6);
-  border-color: rgba(237, 147, 177, 0.35);
+  border-color: rgba(217, 31, 191, 0.45);
 }
 .service-icon {
   width: 30px;
@@ -372,7 +412,7 @@ main#main > .container { padding-top: 24px; padding-bottom: 24px; }
   transition: border-color 0.25s var(--ease), transform 0.25s var(--ease);
 }
 .process-timeline li:hover {
-  border-color: rgba(237, 147, 177, 0.3);
+  border-color: rgba(217, 31, 191, 0.4);
   transform: translateY(-3px);
 }
 .step-num {
@@ -381,7 +421,7 @@ main#main > .container { padding-top: 24px; padding-bottom: 24px; }
   flex-shrink: 0;
   border-radius: 50%;
   background: var(--gradient);
-  color: #17111a;
+  color: #ffffff;
   font-family: var(--font-heading);
   font-size: 14px;
   font-weight: 700;
@@ -390,7 +430,7 @@ main#main > .container { padding-top: 24px; padding-bottom: 24px; }
   justify-content: center;
 }
 .step-body { display: flex; align-items: center; gap: 10px; }
-.step-icon { width: 18px; height: 18px; flex-shrink: 0; color: var(--accent-pink); }
+.step-icon { display: none; }
 .step-text { font-size: 15px; color: var(--text); line-height: 1.4; }
 .process-note { color: var(--text-muted); font-size: 14.5px; }
 
