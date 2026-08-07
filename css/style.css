@@ -254,7 +254,7 @@ main#main > .container { padding-top: 24px; padding-bottom: 24px; }
   display: grid;
   gap: 16px;
   max-width: 720px;
-  margin-bottom: 48px;
+  margin-bottom: 40px;
 }
 .thesis-list li {
   position: relative;
@@ -285,7 +285,7 @@ main#main > .container { padding-top: 24px; padding-bottom: 24px; }
   display: grid;
   grid-template-columns: 1fr;
   gap: 16px;
-  margin-bottom: 88px;
+  margin-bottom: 40px;
 }
 @media (min-width: 640px) {
   .services-grid { grid-template-columns: repeat(2, 1fr); }
@@ -388,7 +388,7 @@ main#main > .container { padding-top: 24px; padding-bottom: 24px; }
 }
 
 /* ===== Works ===== */
-.works { padding: 96px 0; border-top: 1px solid var(--border); }
+.works { padding: 40px 0 96px; border-top: 1px solid var(--border); }
 
 .gallery {
   display: grid;
@@ -526,7 +526,7 @@ main#main > .container { padding-top: 24px; padding-bottom: 24px; }
   color: var(--text-muted);
   font-size: 14px;
   font-style: italic;
-  margin-bottom: 88px;
+  margin-bottom: 40px;
 }
 
 .reviews-grid {
@@ -568,7 +568,7 @@ main#main > .container { padding-top: 24px; padding-bottom: 24px; }
 }
 
 /* ===== Contact ===== */
-.contact { padding: 96px 0 0; border-top: 1px solid var(--border); }
+.contact { padding: 40px 0 0; border-top: 1px solid var(--border); }
 .contact-inner {
   display: grid;
   grid-template-columns: 1fr;
