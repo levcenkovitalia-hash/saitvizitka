@@ -293,10 +293,12 @@ main#main > .container { padding-top: 24px; padding-bottom: 24px; }
   content: "";
   position: absolute;
   top: -20px;
-  left: -80px;
-  width: 380px;
-  height: 380px;
-  background: radial-gradient(circle, rgba(217, 31, 191, 0.16), transparent 70%);
+  left: 0;
+  right: 0;
+  height: 460px;
+  background:
+    radial-gradient(380px circle at 0% 15%, rgba(217, 31, 191, 0.16), transparent 70%),
+    radial-gradient(420px circle at 100% 25%, rgba(147, 51, 234, 0.2), transparent 70%);
   filter: blur(6px);
   pointer-events: none;
   z-index: 0;
@@ -435,7 +437,23 @@ main#main > .container { padding-top: 24px; padding-bottom: 24px; }
 .process-note { color: var(--text-muted); font-size: 14.5px; }
 
 /* ===== Works ===== */
-.works { padding: 40px 0 96px; border-top: 1px solid var(--border); }
+.works { position: relative; padding: 40px 0 96px; border-top: 1px solid var(--border); }
+.works::before {
+  content: "";
+  position: absolute;
+  top: -20px;
+  right: 0;
+  width: 420px;
+  height: 420px;
+  background: radial-gradient(circle, rgba(147, 51, 234, 0.16), transparent 70%);
+  filter: blur(6px);
+  pointer-events: none;
+  z-index: 0;
+}
+.works > * {
+  position: relative;
+  z-index: 1;
+}
 
 .gallery {
   display: grid;
@@ -615,7 +633,23 @@ main#main > .container { padding-top: 24px; padding-bottom: 24px; }
 }
 
 /* ===== Contact ===== */
-.contact { padding: 40px 0 0; border-top: 1px solid var(--border); }
+.contact { position: relative; padding: 40px 0 0; border-top: 1px solid var(--border); }
+.contact::before {
+  content: "";
+  position: absolute;
+  top: -20px;
+  right: 0;
+  width: 420px;
+  height: 420px;
+  background: radial-gradient(circle, rgba(217, 31, 191, 0.16), transparent 70%);
+  filter: blur(6px);
+  pointer-events: none;
+  z-index: 0;
+}
+.contact > * {
+  position: relative;
+  z-index: 1;
+}
 .contact-inner {
   display: grid;
   grid-template-columns: 1fr;
