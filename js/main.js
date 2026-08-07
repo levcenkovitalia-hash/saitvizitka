@@ -24,24 +24,6 @@
     animated.forEach((el) => el.classList.add('is-visible'));
   }
 
-  /* ===== Timeline draw-line ===== */
-  const timelineTrack = document.querySelector('.timeline-track');
-  if (timelineTrack) {
-    if ('IntersectionObserver' in window) {
-      const trackIo = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            timelineTrack.classList.add('is-visible');
-            trackIo.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.4 });
-      trackIo.observe(timelineTrack);
-    } else {
-      timelineTrack.classList.add('is-visible');
-    }
-  }
-
   /* ===== Lightbox ===== */
   const cases = {
     'inner-health': {
